@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cgpa Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>CGPA Calculator</h1>
+        <!-- Input fields to get data  -->
+        <div class="inputFields">
+            <!-- Course Name Input  -->
+            <div class="courseInput">
+                <input type="text" id="CourseInput" placeholder=" ">
+                <label class="courseLabel" for="CourseInput">Course Name</label>
+            </div>
+            <!-- Credit hours input  -->
+            <div class="creditHoursInput">
+                <input type="text" id="creditHoursInput" placeholder=" ">
+                <label class="creditHoursLabel" for="creditHoursInput">Credit Hours</label>
+            </div>
+            <!-- Grade Selector  -->
+            <div class="gradesInput">
+                <select id="gradesInput">
+                    <option value="-">-</option>
+                    <option value="A+">A+</option>
+                    <option value="A">A</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B">B</option>
+                    <option value="B-">B-</option>
+                    <option value="C+">C+</option>
+                    <option value="C">C</option>
+                    <option value="C-">C-</option>
+                    <option value="F">F</option>
+                </select>
+            </div>
+        </div>
+        <!-- Action buttons  -->
+        <div class="buttonsPrt">
+            <button onclick="addCourse()">Add Course</button>
+            <button onclick="reset()">Reset</button>
+        </div>
+        <!-- Maintains list of courses  -->
+        <div class="courseList">
+            <div class="courseHeader">
+                <div class="NameHeader">Course Name</div>
+                <div>Credit Hours</div>
+                <div>Grade</div>
+            </div>
+        </div>
+        <!-- show calculated Cgpa -->
+        <div id="showCgpa">
+            <span>CGPA -> </span>
+            <h2 class="showCgpa">-</h2>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

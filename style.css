@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Special+Gothic+Expanded+One&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+body{
+    min-height: 100vh;
+    background: linear-gradient(45deg,#547792, #8E7DBE);
+}
+.container{
+    margin: 50px auto;
+    min-height: 200px;
+    width: 420px;
+    background-color: #e6e4e4;
+    border-radius: 5px;
+    padding: 20px;
+}
+.container h1{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #3B5998;
+}
+/* ----------- Styling for Input Fields -----------  */
+.inputFields{
+    display: flex;
+    gap: 5px;
+}
+.courseInput,.creditHoursInput{
+    position: relative;
+}
+.courseInput input,.creditHoursInput input{
+    background: #e6e4e4;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    padding: 5px;
+    outline: none;
+    width: 186px;
+}
+.courseLabel,.creditHoursLabel{
+    position: absolute;
+    left: 8px;
+    top: 8px;
+    font-size: 14px;
+    padding: 0 4px;
+    transition: 0.3s ease;
+    opacity: 0.5;
+}
+.courseInput input:focus,.creditHoursInput input:focus{
+    border: 2px solid #547792;
+}
+.courseInput input:focus + .courseLabel,.creditHoursInput input:focus+.creditHoursLabel,
+.courseInput input:not(:placeholder-shown)+.courseLabel,
+.creditHoursInput input:not(:placeholder-shown)+.creditHoursLabel{
+    top: -8px;
+    z-index: 9999;
+    color: #547792;
+    font-size: 13px;
+    opacity: 1;
+    background: #e6e4e4;
+}
+.creditHoursInput input{
+    width: 120px;
+}
+.gradesInput select{
+    background: #e6e4e4;
+    font-size: 16px;
+    appearance: none;
+    padding: 6px 25px 6px 10px;
+    background: url('data:image/svg+xml;utf8,<svg fill="black" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 6px center;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    outline: none;
+}
+/* --------- Styling for action buttons ----------  */
+.buttonsPrt{
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+}
+.buttonsPrt button{
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 5px;
+    font-size: 15px;
+    font-weight: 450;
+    background: #dc3545;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.buttonsPrt button:nth-child(1){
+    background: #28a745;
+}
+.buttonsPrt button:nth-child(1):hover{
+    background: none;
+    border: 1.5px solid #28a745;
+    color: black;
+}
+.buttonsPrt button:nth-child(2):hover{
+    background: none;
+    border: 1.5px solid #dc3545;
+    color: black;
+}
+/* ---------- Styling for courses list and header ---------  */
+.courseList{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+.courseHeader,.courseItem{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+    padding: 5px 8px;
+    border-bottom: 2px solid #3B5998;
+    background: #ddd;
+}
+.courseItem div {
+    flex: 1;
+    text-align: start;
+}
+.courseItem div:not(:first-child){
+    text-align: end;
+}
+.NameHeader{
+    width: 160px;
+}
+.courseItem{
+    margin-top: 5px;
+    font-size: 14.5px;
+    border: none;
+    background: none;
+}
+/* -------- Styling for show cgpa part --------  */
+
+#showCgpa{
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #28a745;
+}
+#showCgpa span{
+    color: #3B5998;
+    font-weight: 550;
+    font-size: 20px;
+    margin-right: 6px;
+}
+
+/* --------- Media queries for responsiveness ----------  */
+@media (max-width:780px) {
+    .container{
+        width: 340px;
+        padding: 20px 10px;
+    }
+    .courseInput input{
+        width: 135px;
+        font-size: 17.5px;
+    }
+    .creditHoursInput input{
+        width: 115px;
+        font-size: 17.5px;
+    }
+    .gradesInput select{
+        padding: 7px 25px 7px 10px;
+    }
+    .buttonsPrt button{
+        padding: 7px;
+        font-size: 16px;
+    }
+    .courseItem{
+        font-size: 16px;
+    }
+    .NameHeader{
+        width: 140px;
+    }
+}
